@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+html,
+body {
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+
+/* .container-fluid {
+    height: 100%;
+    align-content: center;
+} */
+
+.card {
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: auto;
+    width: 90%;
+    background-color: rgba(216, 216, 216, 0.5) !important;
+    border-width: 2px;
+    border-color: #99c7bf;
+}
+
+.btn-logout {
+    width: 150px;
+    margin-right: 100px;
+}
+
+.btn-request {
+    margin-right: 50px;
+}
+
+.btn-account {
+    margin-right: 50px;
+}
+
+.table-head {
+    line-height: 30px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+.table-body {
+    background-color: #d9d9d9;
+}
+
+
+
+
+
+
+/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV CSS ELEMENTS TO USE SEARCH BAR VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV*/
+.containerStyle {
+	margin-top: 25px;
+}
+.search {
+    position: relative;
+    box-shadow: 0 0 40px rgba(51, 51, 51, .1)
+}
+
+.search input {
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid blue
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px
+}
+
+.search button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: blue
+}
