@@ -1,0 +1,44 @@
+body {
+	background-image: url('images/background.png');
+	background-size: cover;
+  	background-repeat: no-repeat;
+  	background-position: center center;
+  	background-attachment: fixed;
+  	height: 100%;
+  	font-family: 'Numans', sans-serif;
+}
+
+.containerclass {
+	margin-top: 250px; 
+	margin-bottom: 50px;
+}
+
+.has-error label,
+.has-error input,
+.has-error textarea {
+    color: red;
+    border-color: red;
+}
+
+.list-unstyled li {
+    font-size: 13px;
+    padding: 4px 0 0;
+    color: red;
+}
+
+
+.card {
+    height: 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 550px;
+    background-color: rgba(74, 85, 83, 0.5) !important;
+    border: none !important;
+    box-shadow: 0 30px 40px rgba(0,0,0,.8);
+}
+
+
+.btn-logout {
+    width: 150px;
+    margin-left: 90%;
+}

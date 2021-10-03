@@ -6,6 +6,11 @@ body {
     font-family: 'Numans', sans-serif;
 }
 
+.btn-logout {
+    width: 150px;
+    margin-left: 90%;
+}
+
 .form-control:focus {
     box-shadow: none;
     border-color: #BA68C8

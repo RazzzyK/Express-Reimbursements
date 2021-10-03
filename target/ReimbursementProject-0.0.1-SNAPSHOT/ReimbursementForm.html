@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create Ticket Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/formStyle.css">
+    <script src="./javascript/form.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Create a new Reimbursement Ticket</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample04">
+                
+                <button type="button" class="btn btn-logout btn-outline-danger" onclick="window.history.go(-1); return false;">GO BACK</button>
+
+            </div>
+        </div>
+    </nav>
+
+<div class="row d-flex justify-content-center align-items-center containerclass">
+<h1 class="mb-3 ticket-welcome text-center">FILL OUT THE FIELDS AND SUBMIT YOUR REIMBURSEMENT TICKET</h1>
+</div>
+	
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="card">
+            <h5 class="card-header text-center">All submissions are subject to pending approval</h5>
+            <div class="card-body">
+                <form role="form" data-toggle="validator">
+
+
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="text" class="form-control" onBlur="this.value=formatCurrency(this.value)" style="background-color: #C7DAD4;" data-error="You must have a name." id="amount" placeholder="$0.00" required>
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        
+                        
+                        <select class="form-select" id="type" style="background-color: #CAD9D2;">
+						  <option style="background-color: #CAD9D2;" selected>Select type...</option>
+						  <option value="LODGING">LODGING</option>
+						  <option value="FOOD">FOOD</option>
+						  <option value="TRAVEL">TRAVEL</option>
+						  <option value="OTHER">OTHER</option>
+						</select>
+						
+						<!-- <label class="form-label" for="customFile">Default file input example</label> -->
+						<input type="file" style="margin-left: 50px; background-color: #CAD9D2;" id="receipt" />
+                    </div>
+                
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" style="background-color: #D3DBCB;" data-error="Please enter message." id="inputMessage"
+                            placeholder="Description" required></textarea>
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-block" onclick="somefunction()">Submit Ticket</button>
+                    </div>
+                    
+                    
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

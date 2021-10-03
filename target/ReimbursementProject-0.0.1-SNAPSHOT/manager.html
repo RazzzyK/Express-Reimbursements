@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manger Page</title>
+
+    <!--Bootsrap 5 CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2961dbb4cf.js" crossorigin="anonymous"></script>
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="css/managerStyle.css">
+    <script src="./javascript/manager.js"></script>
+</head>
+
+<body><!--  -->
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Manager Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample04">
+
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+
+                    <!-- <form class="search-box">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    </form> -->
+                    
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li> -->
+
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li> -->
+
+                </ul>
+
+                <!-- <button type="button" class="btn btn-request btn-outline-success myBtn" onclick="location.href='ReimbursementForm.html'">CREATE NEW REQUEST</button> -->
+                <button type="button" class="btn btn-account btn-outline-info" onclick="location.href='accountinfo.html'">MY ACCOUNT</button>
+                <button type="button" class="btn btn-logout btn-outline-danger" onclick="location.href='login.html'">LOG OUT</button>
+
+            </div>
+        </div>
+    </nav>
+	
+	<!-- <div class="container containerStyle">
+	    <div class="row height d-flex justify-content-center align-items-center">
+	        <div class="col-md-8">
+	            <div class="search"> <input name="searchbox" id="searchbox"type="text" class="form-control" placeholder="Enter an Employee Name"> <button class="btn btn-primary" onClick="idkwhatimdoing('')">Search</button> </div>
+	        </div>
+	    </div>
+	</div> -->
+	
+	<div class="row">
+		<div class="column container-fluid container1">
+	
+	        <div class="d-flex h-100">
+	
+	            <div class="card1 table-borderless">
+	
+	                <table class="table table-hover" id="table">
+	                	<thead><th>List of All Employee</th></thead>
+	                    <thead class="thead-dark table-head">
+
+	                    	
+
+	                        <tr>
+	                            <th>User ID</th>
+	                            <th>Name</th>
+	                        </tr>
+	                    </thead>
+	                    
+	                    <tbody class="table-body" id="tbody">
+	                       
+	                    </tbody>
+	                </table>
+	
+	            </div>
+	        </div>
+	    </div>
+	
+		<div class="container-fluid column container2">
+	
+	        <div class="d-flex h-100">
+	
+	            <div class="card2 table-borderless" id="card2">
+	
+	                <table class="table2 table-hover" id="table2">
+	                    <thead class="thead-dark table-head">
+	                        <tr>
+	                            <th>Ticket ID</th>
+	                            <th>Amount</th>
+	                            <th>Type</th>
+	                            <th>Status</th>
+	                            <th>Reciept</th>
+	                            <th>Approve/Deny</th>
+	                        </tr>
+	                    </thead>
+	                    
+	                    <tbody class="table-body" id="tbody2">
+	                       
+	                    </tbody>
+	                </table>
+	
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- <button onclick="populateEmployeeTable()">Click Me</button> -->
+	<script>populateEmployeeTable();</script>
+
+</body>
+
+</html>

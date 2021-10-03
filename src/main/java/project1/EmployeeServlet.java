@@ -33,13 +33,14 @@ public class EmployeeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DAOHandler dao = new DAOHandler();
-		HttpSession session = request.getSession(false);
+		HttpSession session = request.getSession();
+		PrintWriter out = response.getWriter();
 		String username = "";
-		
+
 		try {
 			
 			username = (String) session.getAttribute("username");
-			
+
 			if (session.getAttribute("username") == null) {}
 			else {
 				System.out.println("Login Success!");
@@ -50,8 +51,7 @@ public class EmployeeServlet extends HttpServlet {
 				
 				if(dataToSend.size() == 0)
 					jsonString = "No Tickets Found!";
-				System.out.println(jsonString);
-				PrintWriter out = response.getWriter();
+				
 				response.setContentType("application/json");
 		        response.setCharacterEncoding("UTF-8");
 		        out.print(jsonString);

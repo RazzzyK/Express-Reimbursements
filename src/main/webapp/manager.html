@@ -14,7 +14,7 @@
 
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="css/managerStyle.css">
-    <script src="manager.js"></script>
+    <script src="./javascript/manager.js"></script>
 </head>
 
 <body><!--  -->
@@ -59,74 +59,74 @@
 
                 <!-- <button type="button" class="btn btn-request btn-outline-success myBtn" onclick="location.href='ReimbursementForm.html'">CREATE NEW REQUEST</button> -->
                 <button type="button" class="btn btn-account btn-outline-info" onclick="location.href='accountinfo.html'">MY ACCOUNT</button>
-                <button type="button" class="btn btn-logout btn-outline-danger" onclick="location.href='login.html'">LOG OUT</button>
+                <button type="button" class="btn btn-logout btn-outline-danger" onclick="logout()">LOG OUT</button>
 
             </div>
         </div>
     </nav>
 	
-	<div class="container containerStyle">
+	<!-- <div class="container containerStyle">
 	    <div class="row height d-flex justify-content-center align-items-center">
 	        <div class="col-md-8">
-	            <div class="search"> <input name="searchbox" id="searchbox"type="text" class="form-control" placeholder="Enter an Employee Name"> <button class="btn btn-primary" onClick="idkwhatimdoing()">Search</button> </div>
+	            <div class="search"> <input name="searchbox" id="searchbox"type="text" class="form-control" placeholder="Enter an Employee Name"> <button class="btn btn-primary" onClick="idkwhatimdoing('')">Search</button> </div>
+	        </div>
+	    </div>
+	</div> -->
+	
+	<div class="row">
+		<div class="column container-fluid container1">
+	
+	        <div class="d-flex h-100">
+	
+	            <div class="card1 table-borderless">
+	
+	                <table class="table table-hover" id="table">
+	                	<!-- <thead><th>List of All Employee</th></thead> -->
+	                    <thead class="thead-dark table-head">
+
+	                        <tr>
+	                            <th>User ID</th>
+	                            <th>Name</th>
+	                        </tr>
+	                    </thead>
+	                    
+	                    <tbody class="table-body" id="tbody">
+	                       
+	                    </tbody>
+	                </table>
+	
+	            </div>
+	        </div>
+	    </div>
+	
+		<div class="container-fluid column container2">
+	
+	        <div class="d-flex h-100">
+	
+	            <div class="card2 table-borderless" id="card2">
+	
+	                <table class="table2 table-hover" id="table2">
+	                    <thead class="thead-dark table-head">
+	                        <tr>
+	                            <th>Ticket ID</th>
+	                            <th>Amount</th>
+	                            <th>Type</th>
+	                            <th>Status</th>
+	                            <th>Reciept</th>
+	                            <th>Approve/Deny</th>
+	                        </tr>
+	                    </thead>
+	                    
+	                    <tbody class="table-body2" id="tbody2">
+	                    </tbody>
+	                </table>
+	
+	            </div>
 	        </div>
 	    </div>
 	</div>
-
-    <div class="container-fluid">
-
-        <div class="d-flex justify-content-center h-100">
-
-            <div class="card table-borderless">
-
-                <table class="table table-hover">
-                    <thead class="thead-dark table-head">
-                        <tr>
-                            <th>Ticket ID</th>
-                            <th>Amount</th>
-                            <th>Type</th>
-                            <th>Status</th>
-                            <th>Reciept</th>
-                            <th>Approve/Deny</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-body">
-                        <!-- <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>test</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr> -->
-                    </tbody>
-                    <!-- <tfoot>
-                        <tr>
-                            <td>21,000</td>
-                            <td>21,000</td>
-                        </tr>
-                    </tfoot> -->
-                </table>
-
-
-
-
-            </div>
-
-        </div>
-
-    </div>
+	<!-- <button onclick="populateEmployeeTable()">Click Me</button> -->
+	<script>populateEmployeeTable();</script>
 
 </body>
 

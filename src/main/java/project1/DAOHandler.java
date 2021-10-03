@@ -66,6 +66,40 @@ public class DAOHandler {
 		return "INVALID";
 	}
 	
+	public User getCurrentUser(String userN)
+	{
+		System.out.println(userN);
+		User u = new User();
+		
+		String safeQuery = "Select * from EXPRESS.ERS_USERS where ers_username=?";
+		
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(safeQuery);
+			
+			ps.setString(1, userN);
+			
+			ResultSet rs = ps.executeQuery();
+
+			if(!rs.next())
+				return u;
+			else
+			{
+				u.setId(rs.getInt(1) + "");
+				u.setUsername(rs.getString(2));
+				u.setPassword(rs.getString(3));
+				u.setFirstname(rs.getString(4));
+				u.setLastname(rs.getString(5));
+				u.setEmail(rs.getString(6));
+				u.setRole(rs.getString(7));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return u;
+	}
+	
 	public void addToReimbursementTable(Ticket t)
 	{
 		Random r = new Random();
@@ -142,7 +176,6 @@ public class DAOHandler {
 				return userTickets;
 			else
 			{
-
 				 do {
 					Ticket add = new Ticket();
 					add.setID(rs.getString(1));
@@ -191,5 +224,146 @@ public class DAOHandler {
 		}
 		
 		return false;
+	}
+	
+	public ArrayList<Ticket> approveReimbursement(String id, String userN)
+	{	
+		String safeUpdate = "UPDATE EXPRESS.ERS_REIMBURSEMENT SET REIMB_RESOLVED =?, REIMB_RESOLVER=?, REIMB_STATUS_ID =? WHERE REIMB_ID=?";
+		
+		PreparedStatement push;
+		try {
+			push = conn.prepareStatement(safeUpdate);
+			
+			push.setTimestamp(1, new Timestamp(System.currentTimeMillis()));
+			push.setString(2, userN);
+			push.setInt(3, 1);
+			push.setString(4, id);
+			
+			push.executeUpdate();
+			
+			System.out.println("\tSucessfully Updated");
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return getTicketsInDB(userN);
+	}
+	
+	public ArrayList<Ticket> denyReimbursement(String id, String userN)
+	{	
+		String safeUpdate = "UPDATE EXPRESS.ERS_REIMBURSEMENT SET REIMB_RESOLVED =?, REIMB_RESOLVER=?, REIMB_STATUS_ID =? WHERE REIMB_ID=?";
+		
+		PreparedStatement push;
+		try {
+			push = conn.prepareStatement(safeUpdate);
+			
+			push.setTimestamp(1, new Timestamp(System.currentTimeMillis()));
+			push.setString(2, userN);
+			push.setInt(3, -1);
+			push.setString(4, id);
+			
+			push.executeUpdate();
+			
+			System.out.println("\tSucessfully Updated");
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return getTicketsInDB(userN);
+	}
+	
+	public ArrayList<User> getAllEmployees()
+	{
+		ArrayList<User> userTickets = new ArrayList<User>();
+		
+		String safeQuery = "Select * from EXPRESS.ERS_USERS WHERE user_role=?";
+		
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(safeQuery);
+			
+			ps.setString(1, "Employee");
+			
+			ResultSet rs = ps.executeQuery();
+
+			if(!rs.next())
+				return userTickets;
+			else
+			{
+				 do {
+					User u = new User();
+					u.setId(rs.getInt(1) + "");
+					u.setUsername(rs.getString(2));
+					u.setPassword(rs.getString(3));
+					u.setFirstname(rs.getString(4));
+					u.setLastname(rs.getString(5));
+					u.setEmail(rs.getString(6));
+					u.setRole(rs.getString(7));
+		
+					userTickets.add(u);
+				}while(rs.next());
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return userTickets;
+	}
+	
+	public Ticket getReimb(String id)
+	{
+		Ticket t = new Ticket();
+		
+		String safeQuery = "Select * from EXPRESS.ERS_REIMBURSEMENT where reimb_author=?";
+		
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(safeQuery);
+			
+			ps.setString(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+
+			if(!rs.next())
+				return t;
+			else
+			{
+				t.setID(rs.getString(1));
+				t.setAmount(rs.getString(2));
+				t.setSubmitted(rs.getTimestamp(3) + "");
+				t.setResolved(rs.getTimestamp(4) + "");
+				t.setDescription(rs.getString(5));
+				//BLOB
+				t.setAuthor(rs.getString(7));
+				t.setResolver(rs.getString(8));
+				t.setStatus(rs.getInt(9));
+				t.setType(rs.getString(10));				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return t;
+	}
+	
+	public void removeReimb(String author)
+	{
+		String updateQuery = "DELETE FROM EXPRESS.ERS_REIMBURSEMENT WHERE reimb_author=?";
+		
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(updateQuery);
+			
+			ps.setString(1, author);
+			
+			ResultSet rs = ps.executeQuery();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

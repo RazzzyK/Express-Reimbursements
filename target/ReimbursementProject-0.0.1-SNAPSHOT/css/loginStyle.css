@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+body {
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    
+}
+
+.containerclass {
+	margin-top: 250px; 
+}
+
+.card {
+    height: 310px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(74, 85, 83, 0.5) !important;
+    border: none !important;
+    box-shadow: 0 30px 40px rgba(0,0,0,.8);
+}
+
+.card h3 {
+    color: white;
+    
+}
+
+.input-group-prepend span {
+    width: 40px;
+    height: 35px;
+    background-color: #12d0ff;
+    color: black;
+    border: 0 !important;
+    margin-right: 15px;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.form-control {
+    font-style: italic;
+    height: 35px;
+}
+
+.remember {
+    color: white;
+    margin-top:10px;
+}
+
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 63px;
+    margin-right: 5px;
+} 
+
+.somebuttons {
+	margin-top: 20px;
+	margin-bottom:15px;
+}
+
+.login_btn {
+    color: black;
+    background-color: #6fcfbf;
+    width: 100%;
+    
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: rgb(0, 253, 232);
+}
+
+.links:hover {
+    color: rgb(148, 186, 255);
+}
+
+.links a {
+    margin-left: 4px;
+}
+
+/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV CSS ELEMENTS TO FADE IN THE CARD VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV*/
+.fade-in-image {
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ CSS ELEMENTS TO FADE IN THE CARD ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/

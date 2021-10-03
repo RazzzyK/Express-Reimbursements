@@ -16,7 +16,31 @@ body {
     align-content: center;
 } */
 
-.card {
+
+.container1 {
+ 	float: left;
+  	max-width: 25%;
+  	padding: 5px;
+}
+
+.container2 {
+	float: left;
+  	width: 75%;
+  	padding: 5px;
+}
+
+.card1 {
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: auto;
+    width: 80%;
+    background-color: rgba(216, 216, 216, 0.5) !important;
+    border-width: 2px;
+    border-color: #99c7bf;
+}
+
+.card2 {
+	float:left;
     height: 100%;
     margin-top: 20px;
     margin-bottom: auto;
@@ -24,6 +48,10 @@ body {
     background-color: rgba(216, 216, 216, 0.5) !important;
     border-width: 2px;
     border-color: #99c7bf;
+}
+
+.table2 {
+	width: 100%;
 }
 
 .btn-logout {
@@ -49,6 +77,9 @@ body {
     background-color: #d9d9d9;
 }
 
+.table-body2 {
+    background-color: #d9d9d9;
+}
 
 
 
@@ -87,4 +118,21 @@ body {
     height: 50px;
     width: 110px;
     background: blue
+}
+
+
+
+
+/* Create a two-column layout */
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }

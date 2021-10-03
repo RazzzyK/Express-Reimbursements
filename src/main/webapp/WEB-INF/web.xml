@@ -61,4 +61,24 @@
     <servlet-name>ManagerServlet</servlet-name>
     <url-pattern>/ManagerServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>project1.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AccountInfoServlet</display-name>
+    <servlet-name>AccountInfoServlet</servlet-name>
+    <servlet-class>project1.AccountInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccountInfoServlet</servlet-name>
+    <url-pattern>/AccountInfoServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
